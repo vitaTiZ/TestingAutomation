@@ -13,6 +13,5 @@ Then('I see a text', function () {
         .find('div[class="content-container"]')
         .should('exist')
         .should('be.visible')
-        .should('have.css','color','')
 })
 
