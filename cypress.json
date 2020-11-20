@@ -1,4 +1,5 @@
 {
+  "baseUrl":"http://jw.org",
   "testFiles": "**/*.{feature,features}",
   "chromeWebSecurity": false,
   "requestTimeout":30000,
