@@ -1,5 +1,5 @@
 {
-  "baseUrl":"http://jw.org",
+  "baseUrl":"http://localhost:8080/",
   "testFiles": "**/*.{feature,features}",
   "chromeWebSecurity": false,
   "requestTimeout":30000,
