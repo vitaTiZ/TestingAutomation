@@ -23,6 +23,12 @@ When('I see a text', function () {
 
 Then('I write the text', function(){
     cy.log(this.map)
+    const text = this.map.get('text')
+    cy.get('body home-page')
+        .shadow()
+        .find('game-view')
+        .shadow()
+        .find('div[class="content-container"] div').eq(1).type(text)
 })
 
 Then('I see a navbar', function(){
