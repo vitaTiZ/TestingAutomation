@@ -7,7 +7,7 @@ Feature: KeypressApp
         When I see a text
         Then I write the text
 
-    
+
     Scenario: navbar
         Given I access to app
         Then I see a navbar

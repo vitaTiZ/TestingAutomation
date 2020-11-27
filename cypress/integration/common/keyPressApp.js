@@ -1,11 +1,19 @@
 import { Given, And, Then, When } from "cypress-cucumber-preprocessor/steps";
 
 Given('I access to app', function () {
+    cy.intercept({
+        "pathname": "https://type.fit/api/quotes",
+        "method": "GET"
+    }).as('quote')
     cy.visit('/')
+    cy.wait('@quote').then(xhr=>{
+        cy.log(xhr)
+        var resp = JSON.parse(JSON.stringify(xhr.body))
+        cy.log(resp)
+    })
 })
 
 When('I see a text', function () {
-    // cy.get('span[style="background-color: green"]').should('exist')
     cy.get('body home-page')
         .shadow()
         .find('game-view')
@@ -46,6 +54,8 @@ Then('I see a navbar', function(){
     cy.get('@navbar').find('[data-qa="pinco"]').should('be.visible')
     cy.get('@navbar').find('[data-qa="pallo"]').should('be.visible')
 })
+
+
 
 
 
